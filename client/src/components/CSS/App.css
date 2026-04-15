@@ -1,38 +1,70 @@
+.glass-card {
+  background: rgba(255, 255, 255, 0.05) !important; /* Subtle dark glass */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn-glow {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 28px !important;
+  min-width: 180px;
+  border-radius: 50px !important;
+  border: 1.5px solid var(--accent-teal) !important;
+  text-transform: uppercase !important;
+  font-weight: 800 !important;
+  font-family: 'Outfit', sans-serif !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  text-decoration: none !important;
+}
+
+.btn-glow:hover {
+  background-position: right center;
+  box-shadow: 0 8px 25px var(--glow-color) !important;
+  transform: translateY(-3px);
+}
+
+/* Base App Overrides */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Glass drawer item hover effect */
+.drawer-item {
+  border-radius: 10px !important;
+  margin: 4px 8px !important;
+  transition: all 0.2s ease !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.drawer-item:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  transform: translateX(4px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Fix selection highlights */
+::selection {
+  background: rgba(46, 196, 182, 0.5);
+  color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+::-moz-selection {
+  background: rgba(46, 196, 182, 0.5);
+  color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  color: #ffffff;
 }

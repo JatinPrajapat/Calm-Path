@@ -25,17 +25,63 @@ import Copyright from '../components/Elements/Copyright';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: '#18344A',
+    backgroundColor: '#000000',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
-    padding: '0, 10px',
+    minHeight: '100vh',
+    width: '100%',
+    margin: 0,
+    padding: '40px 20px',
   },
+  loginCard: {
+    backgroundColor: '#09090b',
+    border: '1px solid #27272a',
+    borderRadius: '16px',
+    padding: '40px',
+    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+    width: '100%',
+    maxWidth: '400px',
+  },
+  submitBtn: {
+    backgroundColor: '#fff !important',
+    color: '#000 !important',
+    fontWeight: '700 !important',
+    padding: '12px !important',
+    marginTop: '24px !important',
+    textTransform: 'none !important',
+    fontSize: '15px !important',
+    borderRadius: '8px !important',
+    '&:hover': {
+      backgroundColor: '#e5e7eb !important',
+    }
+  },
+  link: {
+    color: '#2EC4B6',
+    textDecoration: 'none',
+    fontSize: '14px',
+    '&:hover': {
+      textDecoration: 'underline'
+    }
+  }
 }));
 
-const theme = createTheme();
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#2EC4B6',
+    },
+    background: {
+      paper: '#09090b',
+      default: '#000000',
+    },
+  },
+  typography: {
+    fontFamily: '"Inter", "Outfit", sans-serif',
+  },
+});
 
 function Login(props) {
   const classes = useStyles();
@@ -46,7 +92,6 @@ function Login(props) {
   const [pwHelper, setPwHelper] = useState('');
   const [emailHelper, setEmailHelper] = useState('');
   const [checked, setChecked] = useState(false);
-
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -59,125 +104,113 @@ function Login(props) {
       Auth.login(token);
     } catch (e) {
       setEmailState(false)
-      setEmailHelper('Error! No account with those credentials were found!')
+      setEmailHelper('No account found with these credentials!')
     }
   };
 
   const handleChangePw = (event) => {
     const { name, value } = event.target;
-    if (value.length > 8) {
-      setPasswordState(true)
-      setPwHelper('Password is valid!')
+    if (value.length >= 8) {
+      setPasswordState(true);
+      setPwHelper('');
     } else {
-      setPasswordState(false)
-      setPwHelper('Password must be at least 8 characters.')
+      setPasswordState(false);
+      setPwHelper('Min. 8 characters');
     }
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    setFormState({ ...formState, [name]: value });
   };
-
 
   const handleChangeEmail = (event) => {
     const { name, value } = event.target;
-    const validEmail = new RegExp(/^([a-zA-Z0-9_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/)
+    const validEmail = new RegExp(/^([a-zA-Z0-9_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/);
     if (validEmail.test(value)) {
-      setEmailState(true)
-      setEmailHelper('Email is valid!')
+      setEmailState(true);
+      setEmailHelper('');
     } else {
-      setEmailState(false)
-      setEmailHelper('Please enter a valid email')
+      setEmailState(false);
+      setEmailHelper('Invalid email format');
     }
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    setFormState({ ...formState, [name]: value });
   };
 
-
-
   return (
-    <Container className={classes.container}>
-      <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs" sx={{
-          backgroundColor: 'white', marginTop: '100px', marginBottom: '250px',
-        }}>
-          <CssBaseline />
-          <Box
-            sx={{
-              marginTop: 8,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+    <Box className={classes.container}>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <div className={classes.loginCard}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 4 }}>
+            <Avatar sx={{ m: 1, bgcolor: '#2EC4B6', width: 48, height: 48 }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign in
+            <Typography variant="h4" sx={{ fontWeight: 800, fontFamily: 'Outfit', mt: 1 }}>
+              Welcome Back
             </Typography>
-            <Box component="form" onSubmit={handleFormSubmit} noValidate sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-                onChange={handleChangeEmail}
-                error={!emailState}
-                helperText={emailHelper}
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-                onChange={handleChangePw}
-                error={!passwordState}
-                helperText={pwHelper}
-              />
+            <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', mt: 1 }}>
+              Enter your details to access your dashboard
+            </Typography>
+          </Box>
+
+          <Box component="form" onSubmit={handleFormSubmit} noValidate>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              variant="outlined"
+              onChange={handleChangeEmail}
+              error={!emailState && formState.email.length > 0}
+              helperText={emailHelper}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              variant="outlined"
+              onChange={handleChangePw}
+              error={!passwordState && formState.password.length > 0}
+              helperText={pwHelper}
+            />
+            <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label={<Typography sx={{ fontSize: '13px' }}>Remember me</Typography>}
                 checked={checked}
                 onChange={() => setChecked(!checked)}
               />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  {/* <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link> */}
-                </Grid>
-                <Grid item>
-                  <Link to="/signup" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
             </Box>
+
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              className={classes.submitBtn}
+            >
+              Sign In
+            </Button>
+
+            <Grid container sx={{ mt: 3, textAlign: 'center' }}>
+              <Grid item xs={12}>
+                <Link to="/signup" className={classes.link}>
+                  Don't have an account? <strong>Sign Up</strong>
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
-        </Container>
+        </div>
+        <Box sx={{ mt: 6 }}>
+          <Copyright sx={{ color: 'rgba(255,255,255,0.3)' }} />
+        </Box>
       </ThemeProvider>
-    </Container>
+    </Box>
   );
 }
 

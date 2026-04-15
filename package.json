@@ -4,7 +4,7 @@
   "engines": {
     "node": "16.14.0"
   },
-  "description": "mental health check",
+  "description": "Calm Path",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nitrotap/mental-health-check.git"
+    "url": "git+https://github.com/CalmPath/mental-health-check.git"
   },
   "keywords": [
     "mental-health",
@@ -24,16 +24,17 @@
     "schizophrenia",
     "post-traumatic-stress"
   ],
-  "author": "nitrotap",
+  "author": "CalmPath",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nitrotap/mental-health-check/issues"
+    "url": "https://github.com/CalmPath/mental-health-check/issues"
   },
-  "homepage": "https://github.com/nitrotap/mental-health-check#readme",
+  "homepage": "https://github.com/CalmPath/mental-health-check#readme",
   "devDependencies": {
     "concurrently": "^7.2.0"
   },
   "dependencies": {
-    "chart.js": "^4.4.1"
+    "chart.js": "^4.4.1",
+    "react-card-memory-game": "^1.1.6"
   }
 }

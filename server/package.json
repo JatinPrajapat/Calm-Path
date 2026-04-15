@@ -8,12 +8,12 @@
     "watch": "nodemon",
     "seed": "node seed/seeds.js"
   },
-  "author": "nitrotap",
+  "author": "CalmPath",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nitrotap/mental-health-check/issues"
+    "url": "https://github.com/CalmPath/mental-health-check/issues"
   },
-  "homepage": "https://github.com/nitrotap/mental-health-check#readme",
+  "homepage": "https://github.com/CalmPath/mental-health-check#readme",
   "dependencies": {
     "@faker-js/faker": "^6.3.1",
     "apollo-server-express": "^3.7.0",

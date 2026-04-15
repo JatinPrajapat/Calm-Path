@@ -19,12 +19,32 @@ const responseType = { // an object with distinct types
         { text: "A couple times a week", score: 3 },
         { text: "Every Day", score: 4 }],
     userInput: [],
-    season: seasons
+    season: seasons,
+    likert: [
+        { text: "Never", score: 0 },
+        { text: "Rarely", score: 1 },
+        { text: "Sometimes", score: 2 },
+        { text: "Often", score: 3 },
+        { text: "Always", score: 4 }
+    ]
 }
 /*  Questions in this format
     {question: "",
     response: responseType.frequency},
 */
+
+const stressQuestions = [
+    { question: "How often have you felt unable to control the important things in your life?", response: responseType.likert },
+    { question: "How often have you felt nervous and stressed during the past month?", response: responseType.likert },
+    { question: "How often have you felt confident about your ability to handle personal problems?", response: responseType.likert, reverse: true },
+    { question: "How often have you felt that things were going your way?", response: responseType.likert, reverse: true },
+    { question: "How often have you found that you could not cope with all the things you had to do?", response: responseType.likert },
+    { question: "How often have you been able to control irritations in your life?", response: responseType.likert, reverse: true },
+    { question: "How often have you felt that you were on top of things?", response: responseType.likert, reverse: true },
+    { question: "How often have you been angered because of things that were outside of your control?", response: responseType.likert },
+    { question: "How often have you felt difficulties were piling up so high that you could not overcome them?", response: responseType.likert },
+    { question: "How often have you felt that you were effectively coping with important changes?", response: responseType.likert, reverse: true }
+];
 const depressionQuestions = [ // an array of objects depressionQuestions[0].question, depressionQuestions[1].response PHQ-9
     {
         question: "Are you having thoughts that you would be better off dead, or of hurting yourself?",
@@ -148,7 +168,7 @@ const anxietyQuestions = [  // an array of objects GAD-7
 ]; // 7 questions
 
 const questionBank = {
-    depressionQuestions, anxietyQuestions, ptsdQuestions, schQuestions, impairmentQuestions, addictionQuestions
+    depressionQuestions, anxietyQuestions, ptsdQuestions, schQuestions, impairmentQuestions, addictionQuestions, stressQuestions
 }
 
 

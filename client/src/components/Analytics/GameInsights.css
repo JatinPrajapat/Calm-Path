@@ -1,0 +1,104 @@
+.gi-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  animation: slideIn 0.5s ease;
+}
+
+.gi-card {
+  background: #09090b;
+  border: 1px solid #18181b;
+  border-radius: 20px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gi-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.gi-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gi-icon {
+  color: #2EC4B6;
+}
+
+.gi-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.gi-stat-item {
+  text-align: center;
+  padding: 16px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+}
+
+.gi-stat-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #71717a;
+  margin-bottom: 4px;
+}
+
+.gi-stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.gi-insight-box {
+  background: rgba(46, 196, 182, 0.05);
+  border: 1px solid rgba(46, 196, 182, 0.1);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.gi-insight-bulb {
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gi-insight-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.gi-trend {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.gi-trend.up { color: #10b981; }
+.gi-trend.down { color: #ef4444; }
+
+@media (max-width: 640px) {
+  .gi-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

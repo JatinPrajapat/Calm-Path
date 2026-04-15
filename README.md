@@ -1,14 +1,14 @@
-# Mental Health Check
+# Calm Path
 
 ## Description
 
-A mental health quiz app that helps users track their moods using standardized screening tests. Mental Health Check tests users with multiple quiz options to help users understand and identify their feelings. The app is a Progressive Web Application including the ability to take and save quiz results offline. The application uses a React.js front-end with MongoDB and Express.js running the back-end and Node.js as the package manager.
+A mental health quiz app that helps users track their moods using standardized screening tests. Calm Path tests users with multiple quiz options to help users understand and identify their feelings. The app is a Progressive Web Application including the ability to take and save quiz results offline. The application uses a React.js front-end with MongoDB and Express.js running the back-end and Node.js as the package manager.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![badmath](https://img.shields.io/github/languages/top/nitrotap/mental-health-check)  
-![badmath](https://img.shields.io/github/issues/nitrotap/mental-health-check)
-![badmath](https://img.shields.io/github/forks/nitrotap/mental-health-check)  
-![badmath](https://img.shields.io/github/stars/nitrotap/mental-health-check)
+![badmath](https://img.shields.io/github/languages/top/CalmPath/mental-health-check)  
+![badmath](https://img.shields.io/github/issues/CalmPath/mental-health-check)
+![badmath](https://img.shields.io/github/forks/CalmPath/mental-health-check)  
+![badmath](https://img.shields.io/github/stars/CalmPath/mental-health-check)
 
 https://mh-check.herokuapp.com/  
 https://www.mhcheck.app/
@@ -26,7 +26,7 @@ https://www.mhcheck.app/
 
 ## Overview
 
-Mental Health Check is a quiz app that helps users identify their feelings and directs them to helpful resources.
+Calm Path is a quiz app that helps users identify their feelings and directs them to helpful resources.
 
 ## Features
 
@@ -67,14 +67,14 @@ Use the .env.example file to ensure proper database setup. Replace the environme
 
 ## Made By:
 
-[Nitrotap](https://github.com/nitrotap) - Kartik Jevaji  
+[CalmPath](https://github.com/CalmPath) - Kartik Jevaji  
 [Harabushi](https://github.com/Harabushi) - Colby Harris  
 [ChaVue91](https://github.com/chavue91) - Cha Vue  
 [WillYazdani](https://github.com/WillYazdani) - Will Yazdani
 
 ## Questions
 
-Please reach out to me on [GitHub](https://github.com/nitrotap) or by email at kartikinpublic@gmail.com for any additional questions.
+Please reach out to me on [GitHub](https://github.com/CalmPath) or by email at kartikinpublic@gmail.com for any additional questions.
 
 ## License
 

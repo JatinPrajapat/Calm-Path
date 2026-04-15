@@ -1,0 +1,195 @@
+.gw-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #09090b;
+  border: 1px solid #18181b;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: gwFadeIn 0.5s ease-out;
+}
+
+@keyframes gwFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ── Header & HUD ────────────────────────────── */
+.gw-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #18181b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(24, 24, 27, 0.4);
+}
+
+.gw-title-area h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.gw-title-area span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #52525b;
+}
+
+.gw-hud {
+  display: flex;
+  gap: 24px;
+}
+
+.gw-stat {
+  text-align: right;
+}
+
+.gw-stat-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #71717a;
+  margin-bottom: 2px;
+}
+
+.gw-stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2EC4B6;
+}
+
+/* ── Stage ───────────────────────────────────── */
+.gw-stage {
+  min-height: 400px;
+  background: #000000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gw-iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  background: #fff;
+}
+
+/* ── Intro Overlay ───────────────────────────── */
+.gw-overlay {
+  padding: 40px;
+  text-align: center;
+}
+
+.gw-instructions {
+  color: #a1a1aa;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 24px 0 40px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Result Screen ───────────────────────────── */
+.gw-result-card {
+  padding: 40px;
+  text-align: center;
+}
+
+.gw-score-display {
+  font-family: 'Outfit', sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 20px 0;
+  text-shadow: 0 0 20px rgba(46, 196, 182, 0.3);
+}
+
+.gw-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.gw-metric-item {
+  background: #18181b;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #27272a;
+}
+
+.gw-insight-box {
+  background: rgba(46, 196, 182, 0.1);
+  border: 1px solid rgba(46, 196, 182, 0.2);
+  padding: 24px;
+  border-radius: 20px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.gw-insight-box h4 {
+  color: #2EC4B6;
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.gw-insight-box p {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Actions ─────────────────────────────────── */
+.gw-footer {
+  padding: 24px 32px;
+  background: rgba(24, 24, 27, 0.4);
+  border-top: 1px solid #18181b;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gw-btn-primary {
+  background: #ffffff;
+  color: #000;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gw-btn-primary:hover {
+  background: #2EC4B6;
+}
+
+.gw-btn-exit {
+  background: transparent;
+  color: #71717a;
+  border: 1px solid #27272a;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gw-btn-exit:hover {
+  color: #ffffff;
+  border-color: #52525b;
+}
+
+/* ── Utils ───────────────────────────────────── */
+.text-teal { color: #2EC4B6; }

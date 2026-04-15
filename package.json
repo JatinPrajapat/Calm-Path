@@ -2,7 +2,7 @@
   "name": "mental-health-check",
   "version": "0.1.0",
   "engines": {
-    "node": "16.14.0"
+    "node": "20.x"
   },
   "description": "Calm Path",
   "main": "server/server.js",
